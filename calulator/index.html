@@ -3,65 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Calculator</title>
-    <style>
-        body{
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .calculator{
-            max-width: 500px;
-            background-color: hsl(0, 0%, 15%);
-            overflow: hidden;
-            border-radius: 15px;
-        }
-        .display{
-            width: 100%;
-            padding: 35px;
-            border: none;
-            background-color: hsl(0, 0%, 20%);
-            text-align: left;
-            font-size: 25px;
-            color: white;
-            font-weight: bold;
-
-        }
-        .btn-group{
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            padding: 25px;
-        }
-        button{
-            width: 100px;
-            height: 100px;
-            border: none;
-            border-radius: 50px;
-            background-color: hsl(0, 0%, 30%);
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        button:hover{
-            background-color: hsl(0, 0%, 40%);
-        }
-        button:active{
-            background-color: hsl(0, 0%, 55%);
-        }
-        .operator-btn{
-            background-color: hsl(28, 76%, 55%);
-        }
-        .operator-btn:hover{
-            background-color: hsl(28, 76%, 60%);
-        }
-        .operator-btn:active{
-            background-color: hsl(28, 76%, 65%);
-        }
-    </style>
 </head>
 <body>
     <div class="calculator">
@@ -86,24 +29,6 @@
             <button onclick="clearDisplay()" class="operator-btn">c</button>
         </div>
     </div>
-    <script>
-        const display = document.querySelector('.display');
-
-        const appendToDisplay = (value) => {
-            display.value += value;
-        }
-
-        const clearDisplay = () =>{
-            display.value = ""
-        }
-
-        const calculate = () => {
-            try {
-                display.value = eval(display.value)
-            } catch (error) {
-                display.value = "Error"
-            }
-        }
-    </script>
+    <script src="./main.js"></script>
 </body>
 </html>
